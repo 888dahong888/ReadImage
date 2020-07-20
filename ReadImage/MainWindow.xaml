@@ -4,9 +4,22 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ReadImage"
+        xmlns:HalconDotNet="clr-namespace:HalconDotNet;assembly=halcondotnet"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="600">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="5">
+            <HalconDotNet:HWindowControlWPF x:Name="HWCCameraImage" Margin="5,5,5,5" Width="400" Height="200"/>
+        </Grid>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button x:Name="btnOpenFile" Content="打开图像文件" Margin="5" Click="BtnOpenFile_Click"/>
+            <Button x:Name="btnGrayOP" Content="灰度处理" Margin="5" Click="BtnGrayOP_Click"/>
+            <Button x:Name="btnThresholdOP" Content="二值化处理" Margin="5" Click="BtnThresholdOP_Click"/>
+        </StackPanel>
     </Grid>
 </Window>

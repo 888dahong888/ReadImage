@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.1" halcon_version="12.0">
+<procedure name="main">
+<interface/>
+<body>
+<l>read_image(Image,'C:/Users/DH/Desktop/test.jpg')</l>
+<l>dev_open_window(0,0,512,512,'black',WindowHandle)</l>
+<l>rgb1_to_gray(Image,GrayImage)</l>
+<l>threshold(GrayImage,Regions,10,95)</l>
+<l>dev_display(Regions)</l>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+</hdevelop>
